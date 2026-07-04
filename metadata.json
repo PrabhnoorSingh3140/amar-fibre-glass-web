@@ -1,0 +1,6 @@
+{
+  "name": "Amar Fibre Glass",
+  "description": "Professional website showcasing FRP (Fiber-Reinforced Plastic) products, manufacturing capabilities, and custom inquiries for Amar Fibre Glass.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
