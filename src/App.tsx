@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -67,40 +68,62 @@ export default function App() {
   };
 
   return (
+  <>
+    <Helmet>
+      <title>Amar Fibre Glass | FRP Tank Manufacturer in Punjab, India</title>
+
+      <meta
+        name="description"
+        content="Amar Fibre Glass manufactures FRP chemical tanks, FRP doors, FRP gratings, flower pots, bus body parts, tractor roofs and industrial fiberglass products."
+      />
+
+      <meta
+        name="keywords"
+        content="FRP Tank, FRP Door, Fiberglass Tank, GRP Tank, Chemical Storage Tank, Amar Fibre Glass, Punjab"
+      />
+
+      <meta name="robots" content="index,follow" />
+
+      <link
+        rel="canonical"
+        href="https://amarfibreglass.com"
+      />
+
+      <meta property="og:title" content="Amar Fibre Glass" />
+      <meta
+        property="og:description"
+        content="Industrial FRP & GRP Composite Manufacturer"
+      />
+      <meta
+        property="og:image"
+        content="https://amarfibreglass.com/favicon.png"
+      />
+      <meta
+        property="og:url"
+        content="https://amarfibreglass.com"
+      />
+      <meta property="og:type" content="website" />
+    </Helmet>
+
     <div className="bg-slate-50 min-h-screen text-slate-900 selection:bg-blue-600 selection:text-white overflow-x-hidden antialiased">
       {/* Structural Grid backdrop matching professional theme */}
       <div className="fixed inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-0" />
 
-      {/* Main Page Layout Wrapper */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        {/* Navigation Header */}
         <Navbar onNavigate={handleNavigate} activeSection={activeSection} />
-
-        {/* Home Hero stage */}
         <Hero onNavigate={handleNavigate} />
-
-        {/* Manufacturing Capabilities */}
         <Capabilities onInquire={handleInquireTrigger} />
-
-        {/* Catalog & Specifications Gallery */}
         <ProductGallery onInquire={handleInquireTrigger} />
-
-        {/* Technical Brochure & Spec comparisons */}
         <BrochureViewer />
-
-        {/* Testimonials */}
         <Testimonials />
-
-        {/* Quotation Inquiry Panel */}
         <InquiryForm
           prefilledCategory={prefilledCategory}
           prefilledMessage={prefilledMessage}
           onClearPrefills={handleClearPrefills}
         />
-
-        {/* Footer */}
         <Footer onNavigate={handleNavigate} />
       </div>
     </div>
-  );
+  </>
+);
 }
