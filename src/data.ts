@@ -14,6 +14,7 @@ import frpPlaygroundSlideImg from './assets/images/frp_playground_slide_17826489
 import frpTractorRoofImg from './assets/images/frp_tractor_roof_1782648918110.jpg';
 import frpGymPartImg from './assets/images/frp_gym_part_1782648933519.jpg';
 import frpBusBodyImg from './assets/images/frp_bus_body_1782648950297.jpg';
+import frpMultiPlaySystemImg from './assets/images/frp_multiplay_system_1784270643013.jpg';
 
 export const IMAGES = {
   hero: heroFactoryImg,
@@ -27,6 +28,7 @@ export const IMAGES = {
   tractorRoof: frpTractorRoofImg,
   gymPart: frpGymPartImg,
   busBody: frpBusBodyImg,
+  multiPlaySystem: frpMultiPlaySystemImg,
 };
 
 export const CAPABILITIES: Capability[] = [
@@ -288,6 +290,28 @@ export const PRODUCTS: Product[] = [
     },
     image: frpBusBodyImg,
     isPopular: false
+  },
+  {
+    id: 'frp-playground-multiplay-station',
+    name: 'FRP Playground Multi-Play Station',
+    category: 'Recreational & Sports',
+    description: 'A premium-grade, multi-activity outdoor children play system featuring multiple slides, high-safety bridges, roof canopies, and swings integrated into a robust, high-durability structure.',
+    features: [
+      'Engineered with high tensile Glass-Reinforced Plastic (GRP/FRP) for superior user load safety',
+      'Glossy friction-free wave slide, spiral slide, and enclosed tunnel slides',
+      'UV-stabilized gelcoat coloring prevents sun-bleaching, cracking, and chalking in tropical climates',
+      'Completely smooth seamless curves with no metal splinters or sharp edges to ensure child safety',
+      'Reinforced high-load capacity platforms with slip-resistant safety decking'
+    ],
+    specifications: {
+      'Safety Standards': 'Conforms to international child playground safety standards',
+      'Integrated Elements': 'Wave Slide, Spiral Slide, Tunnel Slide, Swings, Climbing Decks, Safety Ladders, Roof Canopies',
+      'Color Options': 'Bright multi-color combinations (Sunflower Yellow, Cherry Red, Royal Blue, Kelly Green)',
+      'Applications': 'Schools, kindergartens, public parks, luxury residential societies, hotels, amusement resorts',
+      'Customization': 'Modular setups available based on site space constraints and child capacity requirements'
+    },
+    image: frpMultiPlaySystemImg,
+    isPopular: true
   }
 ];
 
