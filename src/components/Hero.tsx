@@ -40,7 +40,7 @@ export default function Hero({ onNavigate }: HeroProps) {
       <div className="absolute inset-0 z-0">
         <img
           src={IMAGES.hero}
-          alt="Amar Fibre Glass Advanced FRP Manufacturing facility"
+          alt="AMAR FIBRE GLASS CO. Advanced FRP Manufacturing facility"
           className="w-full h-full object-cover opacity-35"
           referrerPolicy="no-referrer"
         />
@@ -84,7 +84,7 @@ export default function Hero({ onNavigate }: HeroProps) {
               variants={itemVariants}
               className="text-base sm:text-lg text-slate-300 max-w-xl mb-8 leading-relaxed font-sans"
             >
-              Amar Fibre Glass manufactures high-performance Fiber-Reinforced Plastic (FRP) products. From acid storage tanks to safety gratings and pultruded structures, we deliver maintenance-free corrosion-proof solutions for global industries.
+              AMAR FIBRE GLASS CO. manufactures high-performance Fiber-Reinforced Plastic (FRP) products. From acid storage tanks to safety gratings and pultruded structures, we deliver maintenance-free corrosion-proof solutions for global industries.
             </motion.p>
 
             {/* Buttons */}

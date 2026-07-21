@@ -117,9 +117,9 @@ export default function BrochureViewer() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Amar Fibre Glass Co. - Corporate Product Catalog & Technical Spec Sheet</title>
+  <title>AMAR FIBRE GLASS CO. - Corporate Product Catalog & Technical Spec Sheet</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
     
     :root {
       --primary: #1e3a8a;
@@ -134,7 +134,7 @@ export default function BrochureViewer() {
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       color: #334155;
       background-color: #cbd5e1;
       line-height: 1.5;
@@ -197,7 +197,7 @@ export default function BrochureViewer() {
     }
 
     .cover-title {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: 42px;
       font-weight: 800;
       letter-spacing: -0.5px;
@@ -345,7 +345,7 @@ export default function BrochureViewer() {
     }
 
     .product-name {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: 24px;
       font-weight: 700;
       color: var(--dark);
@@ -502,7 +502,7 @@ export default function BrochureViewer() {
 
     /* Page 2 Details */
     .profile-title {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: 26px;
       font-weight: 700;
       color: var(--dark);
@@ -583,7 +583,7 @@ export default function BrochureViewer() {
     }
 
     .back-title {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: 30px;
       font-weight: 800;
       color: white;
