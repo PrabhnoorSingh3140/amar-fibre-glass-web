@@ -16,12 +16,43 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Brand Column */}
           <div className="md:col-span-4 space-y-4">
             <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => onNavigate('home')}>
-              <div className="w-9 h-9 rounded bg-blue-600 flex items-center justify-center font-display font-black text-white text-lg shadow">
-                A
+              <div className="w-10 h-10 shrink-0">
+                <svg viewBox="0 0 200 200" className="w-full h-full text-white" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Background Solid Blue Circle - Royal Blue to match logo precisely */}
+                  <circle cx="100" cy="100" r="96" fill="#0153b4" />
+                  {/* Outer White Ring */}
+                  <circle cx="100" cy="100" r="80" stroke="white" strokeWidth="8" fill="none" />
+                  
+                  {/* Stylized 'AF' Monogram */}
+                  <g fill="white">
+                    {/* Left diagonal leg of 'A' */}
+                    <path d="M 92 52 L 48 127 L 66 127 L 108 52 Z" />
+                    {/* Vertical right leg of 'A' */}
+                    <rect x="92" y="52" width="16" height="75" />
+                    {/* Crossbar of 'A' */}
+                    <rect x="74" y="90" width="18" height="12" />
+                    {/* Vertical stem of 'F' */}
+                    <rect x="116" y="52" width="16" height="75" />
+                    {/* Top horizontal bar of 'F' */}
+                    <rect x="116" y="52" width="38" height="15" />
+                    {/* Middle horizontal bar of 'F' */}
+                    <rect x="116" y="82" width="28" height="13" />
+                  </g>
+                  
+                  {/* Central semi-transparent AF watermark text exactly as in original logo */}
+                  <text x="100" y="105" textAnchor="middle" fill="rgba(255, 255, 255, 0.28)" fontSize="34" fontWeight="900" fontFamily='"Outfit", "Plus Jakarta Sans", sans-serif'>
+                    AF
+                  </text>
+                  
+                  {/* AMAR text beneath inside the circle */}
+                  <text x="100" y="160" textAnchor="middle" fill="white" fontSize="19" fontWeight="900" letterSpacing="4" fontFamily='"Outfit", "Plus Jakarta Sans", sans-serif'>
+                    AMAR
+                  </text>
+                </svg>
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-base text-white tracking-tight leading-none">
-                  AMAR FIBRE GLASS
+                  AMAR FIBRE GLASS CO.
                 </span>
                 <span className="text-[9px] text-slate-400 font-mono tracking-wider uppercase mt-0.5">
                   FRP Composite Solutions
@@ -143,7 +174,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left text-xs text-slate-500">
           <div className="flex items-center gap-1.5 justify-center sm:justify-start">
             <ShieldCheck className="w-4 h-4 text-emerald-500" />
-            <span>&copy; {currentYear} Amar Fibre Glass. All engineering specifications subject to ASME RTP-1 standards.</span>
+            <span>&copy; {currentYear} AMAR FIBRE GLASS CO. All engineering specifications subject to ASME RTP-1 standards.</span>
           </div>
           <div className="flex gap-4">
             <span className="hover:text-slate-400 transition-colors">Privacy Charter</span>
