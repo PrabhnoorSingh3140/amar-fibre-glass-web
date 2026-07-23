@@ -41,12 +41,12 @@ export default function Hero({ onNavigate }: HeroProps) {
         <img
           src={IMAGES.hero}
           alt="AMAR FIBRE GLASS CO. Advanced FRP Manufacturing facility"
-          className="w-full h-full object-cover opacity-35"
+          className="w-full h-full object-cover opacity-55"
           referrerPolicy="no-referrer"
         />
-        {/* Sleek Gradient Overlay to blend with dark workspace UI */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/20" />
+        {/* Sleek Gradient Overlay to blend with dark workspace UI while leaving background image clearly visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/20" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 w-full py-16 md:py-24">
