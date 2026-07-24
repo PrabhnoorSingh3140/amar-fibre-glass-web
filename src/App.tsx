@@ -7,12 +7,16 @@ import ProductGallery from './components/ProductGallery';
 import BrochureViewer from './components/BrochureViewer';
 import Testimonials from './components/Testimonials';
 import InquiryForm from './components/InquiryForm';
+import SearchModal from './components/SearchModal';
+import { Product } from './types';
 import Footer from './components/Footer';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [prefilledCategory, setPrefilledCategory] = useState('');
   const [prefilledMessage, setPrefilledMessage] = useState('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [gallerySearchQuery, setGallerySearchQuery] = useState('');
 
   // Handle active section on manual scroll
   useEffect(() => {
@@ -122,6 +126,21 @@ export default function App() {
           onClearPrefills={handleClearPrefills}
         />
         <Footer onNavigate={handleNavigate} />
+        <SearchModal
+          isOpen={isSearchOpen}
+          onClose={() => setIsSearchOpen(false)}
+          onNavigate={handleNavigate}
+          onSearchQuerySelect={(query) => {
+            setGallerySearchQuery(query);
+            handleNavigate('products');
+          }}
+          onInquireProduct={(product: Product) => {
+            handleInquireTrigger(
+              product.category,
+              `Hello Amar Fibre Glass Team,\n\nI am interested in your product: "${product.name}".\n\nPlease share the technical catalog, custom drawing formats, pricing matrix, and estimated delivery schedule.\n\nProject details / specs required:\n- Thickness/Size:\n- Operating Chemistry:\n- Estimated Quantity:`
+            );
+          }}
+        />
       </div>
     </div>
   </>

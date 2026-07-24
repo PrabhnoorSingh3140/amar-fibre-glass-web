@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, Filter, ArrowUpRight, X, Table, ShieldCheck, HelpCircle, CheckCircle2 } from 'lucide-react';
 import { PRODUCTS } from '../data';
@@ -6,12 +6,24 @@ import { Product } from '../types';
 
 interface ProductGalleryProps {
   onInquire: (category: string, message: string) => void;
+  externalSearchQuery?: string;
+  onClearExternalSearch?: () => void;
 }
 
-export default function ProductGallery({ onInquire }: ProductGalleryProps) {
+export default function ProductGallery({ onInquire, externalSearchQuery, onClearExternalSearch }: ProductGalleryProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  // Sync with external search query if provided
+  useEffect(() => {
+    if (externalSearchQuery !== undefined) {
+      setSearchQuery(externalSearchQuery);
+      if (externalSearchQuery) {
+        setSelectedCategory('All');
+      }
+    }
+  }, [externalSearchQuery]);
 
   // Extract all unique categories
   const categories = useMemo(() => {
@@ -71,7 +83,10 @@ export default function ProductGallery({ onInquire }: ProductGalleryProps) {
             />
             {searchQuery && (
               <button
-                onClick={() => setSearchQuery('')}
+                onClick={() => {
+                  setSearchQuery('');
+                  if (onClearExternalSearch) onClearExternalSearch();
+                }}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-800 text-xs cursor-pointer"
               >
                 Clear

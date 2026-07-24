@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, Award, MapPin } from 'lucide-react';
+import { Menu, X, Phone, Mail, Award, MapPin, Search } from 'lucide-react';
 
 interface NavbarProps {
   onNavigate: (sectionId: string) => void;
   activeSection: string;
+  onOpenSearch?: () => void;
 }
 
-export default function Navbar({ onNavigate, activeSection }: NavbarProps) {
+export default function Navbar({ onNavigate, activeSection, onOpenSearch }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -122,7 +123,7 @@ export default function Navbar({ onNavigate, activeSection }: NavbarProps) {
           </div>
 
           {/* Desktop Navigation links */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             <ul className="flex items-center gap-6">
               {navItems.map((item) => (
                 <li key={item.id}>
@@ -143,20 +144,44 @@ export default function Navbar({ onNavigate, activeSection }: NavbarProps) {
               ))}
             </ul>
 
+            {/* Global Search Button */}
+            {onOpenSearch && (
+              <button
+                onClick={onOpenSearch}
+                className="flex items-center gap-2 bg-slate-800/90 hover:bg-slate-800 text-slate-300 hover:text-white px-3.5 py-1.5 rounded-md text-xs font-medium border border-slate-700/80 hover:border-slate-500 transition-all cursor-pointer group shadow-sm"
+                aria-label="Search catalog"
+              >
+                <Search className="w-3.5 h-3.5 text-blue-400 group-hover:scale-110 transition-transform" />
+                <span>Search...</span>
+                <kbd className="hidden xl:inline-block bg-slate-900 border border-slate-700 text-[10px] text-slate-400 font-mono px-1.5 py-0.5 rounded ml-1">
+                  ⌘K
+                </kbd>
+              </button>
+            )}
+
             {/* Quick Inquiry Action Button */}
             <button
               onClick={() => handleItemClick('inquiry')}
-              className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-sm font-semibold text-sm transition-all shadow-lg shadow-blue-900/20 uppercase tracking-wider cursor-pointer"
+              className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-sm font-semibold text-sm transition-all shadow-lg shadow-blue-900/20 uppercase tracking-wider cursor-pointer"
             >
               Get a Quote
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          {/* Mobile Actions (Search & Menu) */}
+          <div className="lg:hidden flex items-center gap-2">
+            {onOpenSearch && (
+              <button
+                onClick={onOpenSearch}
+                className="text-slate-300 hover:text-white p-2 rounded-lg border border-slate-800 bg-slate-900/50 hover:bg-slate-800 transition-colors cursor-pointer"
+                aria-label="Search catalog"
+              >
+                <Search className="w-5 h-5 text-blue-400" />
+              </button>
+            )}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-white p-1.5 rounded-lg border border-slate-800 bg-slate-900/50 hover:bg-slate-800 transition-colors"
+              className="text-slate-300 hover:text-white p-2 rounded-lg border border-slate-800 bg-slate-900/50 hover:bg-slate-800 transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
